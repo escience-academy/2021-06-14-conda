@@ -435,9 +435,7 @@ during the workshop.
     <a href="https://github.com/join">create a GitHub account.</a>
 </p>
 
-<h3>Installation instructions</h3>
-<p>
-These are the installation instructions for the tools used
-during the workshop: <a href="./_includes/ea/setup.md">Instructions.</a>
-</p>
+<h3>Follow the installation instructions</h3>
 
+These are the installation instructions for the tools used
+during the workshop: [Instructions]({{ page.root }}{% link _episodes/setup.md %}).
