@@ -401,6 +401,17 @@ please preview your site before committing, and make sure to run
   <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
+<h3>Follow the installation instructions</h3>
+
+For the tools used during the workshop, follow  these [installation
+instructions]({{ page.root }}{% link _episodes/setup.md %}).
+
+<h3>Create a GitHub account</h3>
+<p>
+    In order to use the collaborative document, you need to
+    <a href="https://github.com/join">create a GitHub account.</a>
+</p>
+
 {% comment %}
 For online workshops, the section below provides:
 - installation instructions for the Zoom client
@@ -428,14 +439,3 @@ during the workshop.
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% endif %}
-
-<h3>Create a GitHub account</h3>
-<p>
-    In order to use the collaborative document, you need to
-    <a href="https://github.com/join">create a GitHub account.</a>
-</p>
-
-<h3>Follow the installation instructions</h3>
-
-These are the installation instructions for the tools used
-during the workshop: [Instructions]({{ page.root }}{% link _episodes/setup.md %}).
