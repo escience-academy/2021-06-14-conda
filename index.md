@@ -4,7 +4,7 @@ layout: workshop      # DON'T CHANGE THIS.
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
 venue: "Netherlands eScience Center"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "Online"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
+address: "online"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: "NL"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "EN"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the
 latitude: "52.356731"        # decimal latitude of workshop venue (use https://www.latlong.net/)
@@ -88,6 +88,8 @@ the pitch.
 {% endcomment %}
 {% if site.carpentry == "swc" %}
 {% include swc/intro.html %}
+{% elsif site.carpentry == "ea" %}
+{% include ea/intro.html %}
 {% elsif site.carpentry == "dc" %}
 {% include dc/intro.html %}
 {% elsif site.carpentry == "lc" %}
@@ -136,9 +138,7 @@ address.
 {% elsif online == "true_public" %}
 <p id="where">
   <strong>Where:</strong>
-  online at <a href="{{page.address}}">{{page.address}}</a>.
-  If you need a password or other information to access the training,
-  the instructor will pass it on to you before the workshop.
+  This training will take place online. The instructors will provide you with the information you will need to connect to this meeting.
 </p>
 {% elsif online == "true_private" %}
 <p id="where">
@@ -174,7 +174,7 @@ Modify the block below if there are any special requirements.
     Participants must have access to a computer with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
   {% endif %}
-  They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+  They should have a few specific software packages installed (listed <a href="#setup">below in setup</a>).
 </p>
 
 {% comment %}
@@ -236,7 +236,7 @@ Display the contact email address set in the configuration file.
 <p id="roles">
   <strong>Roles:</strong>
   To learn more about the roles at the workshop (who will be doing what),
-  refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">our Workshop FAQ</a>.
+  refer to <a href="https://carpentries.org/workshop_faq/#what-are-the-roles-of-everyone-participating-in-a-workshop">the Workshop FAQ</a>.
 </p>
 
 {% comment %}
@@ -253,12 +253,14 @@ Edit the text to match who can attend the workshop. For instance:
 - This workshop is open to the public.
 - If you are interested in attending this workshop, contact me@example.com
   for more information
+{% endcomment %}
 
 <p id="who-can-attend">
     <strong>Who can attend?:</strong>
-    This workshop is open to ....
+    The course is aimed at graduate students and other researchers. It is assumed that participants already write code for
+    their research, but no expertise is required. Familiarity with The Bash Shell is expected.
+    <strong>Some experience with basics in Python or R programming is recommended.</strong>
 </p>
-{% endcomment %}
 
 <hr/>
 
@@ -267,17 +269,15 @@ CODE OF CONDUCT
 {% endcomment %}
 <h2 id="code-of-conduct">Code of Conduct</h2>
 
-<p>
-Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
-</p>
+<p>Participants are expected to follow those guidelines:</p>
 
-<p class="text-center">
-  <a href="https://goo.gl/forms/KoUfO53Za3apOuOK2">
-    <button type="button" class="btn btn-info">Report a Code of Conduct Incident</button>
-  </a>
-</p>
-<hr/>
-
+  <ul>
+    <li>Use welcoming and inclusive language</li>
+    <li>Be respectful of different viewpoints and experiences</li>
+    <li>Gracefully accept constructive criticism</li>
+    <li>Focus on what is best for the community</li>
+    <li>Show courtesy and respect towards other community members</li>
+  </ul>
 
 {% comment %}
 Collaborative Notes
@@ -300,18 +300,6 @@ We will use this <a href="{{ page.collaborative_notes }}">collaborative document
 </p>
 <hr/>
 {% endif %}
-
-
-{% comment %}
-SURVEYS - DO NOT EDIT SURVEY LINKS
-{% endcomment %}
-<h2 id="surveys">Surveys</h2>
-<p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-
-<hr/>
-
 
 {% comment %}
 SCHEDULE
@@ -339,6 +327,8 @@ of code below the Schedule `<h2>` header below with
 
 {% if site.carpentry == "swc" %}
 {% include swc/schedule.html %}
+{% elsif site.carpentry == "ea" %}
+{% include ea/schedule.html %}
 {% elsif site.carpentry == "dc" %}
 {% include dc/schedule.html %}
 {% elsif site.carpentry == "lc" %}
@@ -347,6 +337,36 @@ of code below the Schedule `<h2>` header below with
 
 <hr/>
 
+{% comment %}
+SYLLABUS
+
+Show what topics will be covered.
+
+1. If your workshop is R rather than Python, remove the comment
+around that section and put a comment around the Python section.
+2. Some workshops will delete SQL.
+3. Please make sure the list of topics is synchronized with what you
+intend to teach.
+4. You may need to move the div's with class="col-md-6" around inside
+the div's with class="row" to balance the multi-column layout.
+
+This is one of the places where people frequently make mistakes, so
+please preview your site before committing, and make sure to run
+'tools/check' as well.
+{% endcomment %}
+<h2 id="syllabus">Syllabus</h2>
+
+{% if site.carpentry == "swc" %}
+{% include swc/syllabus.html %}
+{% elsif site.carpentry == "ea" %}
+{% include ea/syllabus.html %}
+{% elsif site.carpentry == "dc" %}
+{% include dc/syllabus.html %}
+{% elsif site.carpentry == "lc" %}
+{% include lc/syllabus.html %}
+{% endif %}
+
+<hr/>
 
 {% comment %}
 SETUP
@@ -400,6 +420,7 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
+
 {% if site.carpentry == "swc" %}
 {% include swc/setup.html %}
 {% elsif site.carpentry == "dc" %}
@@ -407,3 +428,16 @@ during the workshop.
 {% elsif site.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% endif %}
+
+<h3>Create a GitHub account</h3>
+<p>
+    In order to use the collaborative document, you need to
+    <a href="https://github.com/join">create a GitHub account.</a>
+</p>
+
+<h3>Installation instructions</h3>
+<p>
+These are the installation instructions for the tools used
+during the workshop: <a href="./_includes/ea/setup.md">Instructions.</a>
+</p>
+
