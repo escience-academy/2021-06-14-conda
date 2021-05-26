@@ -258,9 +258,11 @@ Edit the text to match who can attend the workshop. For instance:
 <p id="who-can-attend">
     <strong>Who can attend?:</strong>
     The course is aimed at graduate students and other researchers. It is assumed that participants already write code for
-    their research, but no expertise is required. Familiarity with The Bash Shell is expected.
-    <strong>Some experience with basics in Python or R programming is recommended.</strong>
+    their research, but no expertise is required.
+    <strong>A basic knowledge of <a href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a> is expected.</strong>
+    Some experience with basics in Python or R programming is recommended.
 </p>
+
 
 <hr/>
 
